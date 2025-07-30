@@ -1,1 +1,92 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+body {
+  background-color: #0d0d0d;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Animación personalizada para el gradiente */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Cyberpunk Animations */
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes scanLines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    to right,
+    rgb(168 85 247 / 0.1),
+    rgb(59 130 246 / 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, rgb(168 85 247), rgb(59 130 246));
+  transition: all 0.2s ease-out;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-nav-link:hover {
+  border-left: 4px solid rgb(168 85 247);
+  padding-left: 1.75rem;
+}
+
+/* GPU acceleration hints */
+.nav-link,
+.mobile-nav-link {
+  transform: translateZ(0);
+}
