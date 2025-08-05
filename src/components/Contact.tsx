@@ -25,8 +25,8 @@ const Contact = memo(() => {
 
   const contactInfo = [
     { icon: Mail, text: 'contacto@rufo.dev', href: 'mailto:contacto@rufo.dev' },
-    { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: MapPin, text: 'Ciudad de México, MX', href: '#' },
+    { icon: Phone, text: '+51 980749533', href: 'tel:+51980749533' },
+    { icon: MapPin, text: 'Lima, Perú', href: '#' },
   ];
 
   return (
